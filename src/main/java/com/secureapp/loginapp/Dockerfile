@@ -1,15 +1,10 @@
-FROM eclipse-temurin:17-jdk-alpine
+FROM openjdk:17-jdk-slim
 
-WORKDIR /app
+# Copy the JAR file (adjust name if different)
+COPY build/libs/secure-login-app-0.0.1-SNAPSHOT.jar app.jar
 
-COPY .mvn/ .mvn
-COPY mvnw .
-COPY pom.xml .
-RUN ./mvnw dependency:go-offline
-
-COPY src ./src
-RUN ./mvnw package -DskipTests
-
+# Expose the port
 EXPOSE 8080
 
-CMD ["java", "-jar", "target/*.jar"]
+# Start the app
+CMD ["java", "-jar", "app.jar"]
