@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Cyber Login</title>
+    <title>Login</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #0d0d0d;
+            background-color: #000;
             color: #0ff;
             font-family: 'Orbitron', sans-serif;
             display: flex;
@@ -14,62 +14,62 @@
             align-items: center;
             height: 100vh;
         }
-        .login-container {
+        .login-box {
             border: 2px solid #0ff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px #0ff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px #0ff;
+            width: 320px;
+            text-align: center;
         }
         h2 {
-            text-align: center;
-            margin-bottom: 25px;
-            text-shadow: 0 0 5px #0ff;
+            margin-bottom: 30px;
+            color: #0ff;
+            text-shadow: 0 0 10px #0ff;
         }
-        input[type="text"], input[type="password"] {
+        input {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
-            background-color: #111;
-            color: #0ff;
-            border: 1px solid #0ff;
-            border-radius: 5px;
-        }
-        button {
-            width: 100%;
-            padding: 12px;
-            background-color: transparent;
+            background: transparent;
             border: 2px solid #0ff;
             color: #0ff;
-            font-weight: bold;
-            border-radius: 8px;
+            border-radius: 5px;
+        }
+        input:focus {
+            outline: none;
+            box-shadow: 0 0 10px #0ff;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background: transparent;
+            border: 2px solid #0ff;
+            color: #0ff;
             cursor: pointer;
-            transition: 0.3s;
+            border-radius: 5px;
+            font-weight: bold;
         }
         button:hover {
-            background-color: #0ff;
-            color: black;
+            background: #0ff;
+            color: #000;
         }
-        .register-link {
+        a {
             color: #0ff;
-            display: block;
-            text-align: center;
-            margin-top: 15px;
-            text-decoration: none;
-        }
-        .register-link:hover {
-            text-decoration: underline;
+            display: inline-block;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-<div class="login-container">
-    <h2>Cyber Login</h2>
+<div class="login-box">
+    <h2>Login</h2>
     <form action="/login" method="post">
         <input type="text" name="username" placeholder="Username" required />
         <input type="password" name="password" placeholder="Password" required />
         <button type="submit">Login</button>
     </form>
-    <a class="register-link" href="/register">New user? Register</a>
+    <a href="/register">New user? Register</a>
 </div>
 </body>
 </html>
