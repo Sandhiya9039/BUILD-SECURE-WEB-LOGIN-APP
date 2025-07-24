@@ -1,41 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Cyber Home</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+    <title>Home</title>
     <style>
         body {
-            background-color: #000;
-            color: #0ff;
-            font-family: 'Orbitron', sans-serif;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: #fff;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-        }
-        .home-container {
             text-align: center;
-            padding: 40px;
-            border: 2px solid #0ff;
+        }
+
+        .home-container {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 40px 50px;
             border-radius: 15px;
-            box-shadow: 0 0 20px #0ff;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+            max-width: 500px;
         }
+
         h1 {
-            text-shadow: 0 0 10px #0ff;
+            margin-bottom: 20px;
+            font-size: 2em;
         }
-        a {
-            margin-top: 20px;
+
+        p {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+
+        a.button {
             display: inline-block;
-            color: #0ff;
-            text-decoration: underline;
+            padding: 12px 24px;
+            background-color: #00f2fe;
+            color: #000;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        a.button:hover {
+            background-color: #ffffff;
+            color: #000;
         }
     </style>
 </head>
 <body>
 <div class="home-container">
-    <h1>Welcome to the Cyber Dashboard</h1>
-    <a href="/logout">Logout</a>
+    <h1>Welcome to Secure Login App</h1>
+    <p>You have successfully logged in.</p>
+    <a class="button" th:href="@{/logout}">Logout</a>
 </div>
 </body>
 </html>

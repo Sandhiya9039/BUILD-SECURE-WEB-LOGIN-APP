@@ -1,75 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Cyber Register</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+    <title>Register</title>
     <style>
         body {
-            background-color: #0d0d0d;
-            color: #f0f;
-            font-family: 'Orbitron', sans-serif;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #43cea2, #185a9d);
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            margin: 0;
         }
         .register-container {
-            border: 2px solid #f0f;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px #f0f;
+            background: white;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            width: 320px;
         }
-        h2 {
+        .register-container h2 {
             text-align: center;
-            margin-bottom: 25px;
-            text-shadow: 0 0 5px #f0f;
+            color: #333;
         }
         input[type="text"], input[type="password"] {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             margin: 10px 0;
-            background-color: #111;
-            color: #f0f;
-            border: 1px solid #f0f;
-            border-radius: 5px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
         }
         button {
             width: 100%;
             padding: 12px;
-            background-color: transparent;
-            border: 2px solid #f0f;
-            color: #f0f;
-            font-weight: bold;
+            background-color: #43cea2;
+            color: white;
+            border: none;
             border-radius: 8px;
             cursor: pointer;
-            transition: 0.3s;
+            margin-top: 10px;
         }
-        button:hover {
-            background-color: #f0f;
-            color: black;
-        }
-        .login-link {
-            color: #f0f;
+        a {
             display: block;
             text-align: center;
-            margin-top: 15px;
+            margin-top: 12px;
+            color: #185a9d;
             text-decoration: none;
-        }
-        .login-link:hover {
-            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 <div class="register-container">
-    <h2>Cyber Register</h2>
-    <form action="/register" method="post">
+    <h2>Register</h2>
+    <form th:action="@{/register}" method="post">
         <input type="text" name="username" placeholder="Username" required />
         <input type="password" name="password" placeholder="Password" required />
         <button type="submit">Register</button>
+        <a th:href="@{/login}">Already have an account? Login</a>
     </form>
-    <a class="login-link" href="/login">Already have an account? Login</a>
 </div>
 </body>
 </html>
